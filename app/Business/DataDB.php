@@ -143,9 +143,9 @@ class DataDB
      * @param $selectcolumns , string con los nombres de las columnas a seleccionar
      * @return \Illuminate\Support\Collection
      */
-    public function allData($table)
+    public function allData($table,$distinct_column,$another_column)
     {
-        return DB::table($table)->distinct()->get();
+         $query = DB::table($table)->select($distinct_column)->distinct();
+         return $query->addSelect($another_column)->get();
     }
-
 }

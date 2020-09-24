@@ -8,10 +8,26 @@ use App;
 use App\Business\DataApi;
 use App\Business\GeoMap;
 
+/**
+ * Class AsentamientoController
+ * @package App\Http\Controllers
+ */
 class AsentamientoController extends Controller
 {
+
+    /**
+     * @var DataApi
+     */
     protected $data_api;
+
+    /**
+     * @var GeoMap
+     */
     protected $data_map;
+
+    /**
+     * @var DataDB
+     */
     protected $datadb;
 
     /**
@@ -38,8 +54,9 @@ class AsentamientoController extends Controller
      *  @return \Illuminate\Http\Response
      */
 	public function create(){
-        $states = $this->datadb->allData('d_estados');
-        $mnpios = $this->datadb->allData('d_mnpios');
+        $states = $this->datadb->allData('d_estados',"d_estado","c_estado");
+        $mnpios = $this->datadb->allData('d_mnpios',"d_mnpio","c_mnpio");
+        //print_r($mnpios);die();
         return view('asentamiento.create',compact('states','mnpios'));
     }
 
