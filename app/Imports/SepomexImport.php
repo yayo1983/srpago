@@ -62,14 +62,4 @@ class SepomexImport implements WithMultipleSheets
             32 => new SheetImport(),
         ];
     }
-
-    /**
-        Función para ignorar desconocida hoja
-     *  @return string info
-     */
-   /* public function onUnknownSheet($sheetName)
-    {
-        // E.g. you can log that a sheet was not found.
-        info("Hoja {$sheetName} fue omitida");
-    }*/
 }
