@@ -6,3 +6,4 @@ el srpago.sql de la base de datos
 datos nombrada srpago y user: root sin contraseña en un servidor de MySQL local.
 4. Configurar el PHP.ini para esta variable: max_execution_time=1500
 5. para correr la aplicación debe poner la siguiente ruta: http://127.0.0.1/srpago/public/
+6. Para cargar el xls demora varios minutos
