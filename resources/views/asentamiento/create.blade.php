@@ -48,7 +48,7 @@
                             <select  id="municipio" class="form-control" name="municipio">
                                 <option value="-1" selected>Seleccione municipio</option>
                                 @foreach($mnpios as $mnpio)
-                                    <option value="{{$mnpio->c_mnpio}}">{{$mnpio->D_mnpio }}</option>
+                                    <option value="{{$mnpio->c_mnpio}}">{{$mnpio->d_mnpio }}</option>
                                 @endforeach
                             </select>
                         </div>
