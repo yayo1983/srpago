@@ -125,9 +125,11 @@
     <!-- scripts api for map from google map-->
     <script src="{{ asset('js/apigoogpejs.js') }}"></script>
 
-   <!-- Demo scripts for generate map in web-->
+   <!-- scripts for generate map in web-->
    <script src="{{ asset('js/map.js') }}"></script>
 
+<!-- scripts for generate opcion for ajax in select o combobox-->
+   <script src="{{ asset('js/select2.full.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

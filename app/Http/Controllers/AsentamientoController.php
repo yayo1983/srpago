@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\Business\DataDB;
 use Illuminate\Http\Request;
 use App;
 use App\Business\DataApi;
@@ -12,14 +12,16 @@ class AsentamientoController extends Controller
 {
     protected $data_api;
     protected $data_map;
+    protected $datadb;
 
     /**
      * AsentamientoController constructor.
      */
-    public function __construct(DataApi $data_api, GeoMap $data_map)
+    public function __construct(DataApi $data_api, GeoMap $data_map, DataDB $datadb)
     {
         $this->data_api = $data_api;
         $this->data_map = $data_map;
+        $this->datadb   = $datadb;
     }
 
      /**
@@ -36,9 +38,18 @@ class AsentamientoController extends Controller
      *  @return \Illuminate\Http\Response
      */
 	public function create(){
-        $states = DB::table('sepomexes')->select('d_estado', 'c_estado')->distinct()->get();
-        $mnpios = DB::table('sepomexes')->select('D_mnpio', 'c_mnpio')->distinct()->get();
+        $states = $this->datadb->allData('d_estados');
+        $mnpios = $this->datadb->allData('d_mnpios');
         return view('asentamiento.create',compact('states','mnpios'));
+    }
+
+    /**
+     *  Función para cargar la vista formulario
+     *  @return \Illuminate\Http\Response
+     */
+    public function estado(){
+        $states = $this->datadb->allData('sepomexes','d_estado, c_estado');
+        return response()->json($states);
     }
 
     /**

@@ -30,3 +30,13 @@ Route::get('form', 'AsentamientoController@create')->name('form');
 Route::post('/mostrar', 'AsentamientoController@show')->name('show');
 
 Route::get('map', 'MapController@maps');
+
+//Para llenar select estado
+Route::get('/estado', 'AsentamientoController@estado');
+
+//Para llenar select municipio
+Route::get('/municipio', 'EntidadController@municipio');
+
+//Para llenar select municipio según provincia seleccionada
+Route::get('/municipioxestado', 'AsentamientoController@municipioxestado');
+

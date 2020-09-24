@@ -7,6 +7,10 @@ use GuzzleHttp\Handler\CurlMultiHandler;
 use GuzzleHttp\HandlerStack;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Class DataApi
+ * @package App\Business
+ */
 class DataApi
 {
     private $request;
@@ -21,7 +25,7 @@ class DataApi
 
     /**
          Función que consume el api de precios de gasolina
-     *   Devuelve en formato json el resultado de la respuesta de la api consumida
+     *   @return json, Devuelve en formato json el resultado de la respuesta de la api consumida
      */
     public function apigasolina()
     {
@@ -42,7 +46,7 @@ class DataApi
 
     /**
     Función que consume el api de precios de gasolina en modo asíncrono
-     *   Devuelve en formato json el resultado de la respuesta de la api consumida
+     *   @return json, Devuelve en formato json el resultado de la respuesta de la api consumida
      */
     public function apigasolina2()
     {

@@ -26,7 +26,7 @@
                 <div class="form-group">
                     <div class="form-group">
                         <div>
-                            <label for="estado">Estado</label>
+                            <label>Estado</label>
                             <select  id="estado" class="form-control" name="estado">
                                 <option value="-1" selected>Seleccione estado</option>
                                 @foreach($states as $state)
@@ -82,3 +82,71 @@
         </div>
     </div>
 @stop
+
+    <script>
+        $(document).ready(function () {
+            $('#estado').select2({
+                placeholder: "Seleccione el estado",
+                allowClear: true,
+                ajax: {
+                    dataType: 'json',
+                    url: '{{ url("estado") }}',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            term: params.term
+                        }
+                    },
+                    processResults: function (data, page) {
+                        return {
+                            results: data
+                        };
+                    }
+                }
+            });
+
+            $('#municipio').select2({
+                placeholder: "Seleccione el municipio",
+                allowClear: true,
+                ajax: {
+                    dataType: 'json',
+                    url: '{{ url("municipio") }}',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            term: params.term
+                        }
+                    },
+                    processResults: function (data, page) {
+                        return {
+                            results: data
+                        };
+                    }
+                }
+            });
+
+            $('#estado').on('change', function () {
+                var idprovincia = $(this).val();
+                $('#municipio').select2({
+                    placeholder: "Seleccione el municipio",
+                    allowClear: true,
+                    ajax: {
+                        dataType: 'json',
+                        url: '{{ url("municipioxprovincia") }}',
+                        delay: 250,
+                        data: function (params) {
+                            return {
+                                idprovincia: idprovincia
+                            }
+                        },
+                        processResults: function (data, page) {
+                            return {
+                                results: data
+                            };
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+

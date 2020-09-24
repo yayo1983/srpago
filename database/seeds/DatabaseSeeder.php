@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(DZonaTableSeeder::class);        
+        $this->call(DZonaTableSeeder2::class);
+        //$this->call(DEstadosSeeder::class);
     }
 }

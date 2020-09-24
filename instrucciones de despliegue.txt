@@ -1,7 +1,8 @@
 Instrucciones para funcionar el proyecto desarrollado con Laravel 7
-1. El proyecto necesita php versi髇 7 y MySQL y servidor web
-2. Una vez colocado el proyecto en la carpeta de publicaci髇 del servidor web e instalada la base de datos debe importar 
+1. El proyecto necesita php versi贸n 7 y MySQL y servidor web
+2. Una vez colocado el proyecto en la carpeta de publicaci贸n del servidor web e instalada la base de datos debe importar
 el srpago.sql de la base de datos
-3. Para la conexi髇 a la base de datos ir al archivo .env, ya tiene una configuraci髇 por defecto con nombre de base de
-datos nombrada srpago y user: root sin contrase馻 en un servidor de MySQL local.
-4. para correr la aplicaci髇 debe poner la siguiente ruta: http://127.0.0.1/srpago/public/
+3. Para la conexi贸n a la base de datos ir al archivo .env, ya tiene una configuraci贸n por defecto con nombre de base de
+datos nombrada srpago y user: root sin contrase帽a en un servidor de MySQL local.
+4. Configurar el PHP.ini para esta variable: max_execution_time=1500
+5. para correr la aplicaci贸n debe poner la siguiente ruta: http://127.0.0.1/srpago/public/

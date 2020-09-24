@@ -9,6 +9,10 @@ use Maatwebsite\Excel\Exceptions\UnreadableFileException;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
+/**
+ * Class NExcel
+ * @package App\Business
+ */
 class NExcel
 {
     /**
