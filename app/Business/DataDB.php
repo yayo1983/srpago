@@ -128,8 +128,9 @@ class DataDB
                         }
                     }
                 }
-            }// endFor
+            }  // endFor
             DB::commit();
+
         } catch (ErrorException $e) {
             DB::rollBack();
         }
